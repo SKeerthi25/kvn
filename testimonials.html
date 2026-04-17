@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | KVN Tech Ltd â€” Client Reviews</title>
+    <meta name="description" content="See what our clients say about KVN Tech Ltd's IT wholesale, hardware supply, and software procurement services.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-left">
+                <span><i class="bi bi-geo-alt-fill"></i>9 Winifred Road, Dartford, DA1 3BL</span>
+                <span><i class="bi bi-clock-fill"></i>Monâ€“Fri: 9amâ€“6pm</span>
+            </div>
+            <div class="topbar-right">
+                <a href="tel:07344603968"><i class="bi bi-telephone-fill"></i>07344603968</a>
+                <a href="mailto:sales@kvntech.co.uk"><i class="bi bi-envelope-fill"></i>sales@kvntech.co.uk</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><i class="bi bi-cpu-fill"></i></div>
+                    KVN <span>Tech</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <button id="themeToggle" class="theme-toggle-btn" title="Switch to Dark Mode">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
+                    <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+                </div>
+                <button class="mobile-menu-btn" id="menuBtn" onclick="document.getElementById('mobileNav').classList.add('open');document.body.style.overflow='hidden'"><i class="bi bi-list"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="menuClose" onclick="document.getElementById('mobileNav').classList.remove('open');document.body.style.overflow=''"><i class="bi bi-x-lg"></i></button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="careers.html">Careers</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-accent" style="margin-top:24px;">Get a Quote</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="sep"><i class="bi bi-chevron-right"></i></span>
+                <span class="current">Testimonials</span>
+            </div>
+            <h1>What Our <span style="color:var(--accent);">Clients Say</span></h1>
+            <p>Trusted by hundreds of UK businesses for reliable, genuine, and cost-effective IT procurement.</p>
+        </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.9/5</span>
+                    <span class="stat-label">Average Rating</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Repeat Business</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years Trusted</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESTIMONIALS GRID -->
+    <section class="testimonials" style="background:var(--off-white);">
+        <div class="container">
+            <div class="title-center" data-reveal>
+                <div class="section-label">Client Reviews</div>
+                <h2 class="section-title">Trusted by <span>UK Businesses</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testi-card" data-reveal>
+                    <div class="testi-stars">â˜…â˜…â˜…â˜…â˜…</div>
+                    <p class="testi-quote">"KVN Tech has been our primary hardware supplier for over 3 years. Their bulk pricing is unbeatable, and the delivery speed for large orders is impressive. Highly recommended."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">JD</div>
+                        <div>
+                            <div class="testi-name">John Davies</div>
+                            <div class="testi-role">CTO, TechScale Solutions</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card" data-reveal>
+                    <div class="testi-stars">â˜…â˜…â˜…â˜…â˜…</div>
+                    <p class="testi-quote">"The software licensing process with KVN Tech was seamless. They helped us navigate complex enterprise agreements and saved us significant costs on our workstation rollout."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">SP</div>
+                        <div>
+                            <div class="testi-name">Sarah Parker</div>
+                            <div class="testi-role">Operations Manager, Global Connect</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card" data-reveal>
+                    <div class="testi-stars">â˜…â˜…â˜…â˜…â˜…</div>
+                    <p class="testi-quote">"Excellent support and genuine products. We recently procured 50 high-end laptops, and the entire transaction from quote to delivery was transparent and professional."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">MK</div>
+                        <div>
+                            <div class="testi-name">Michael Knight</div>
+                            <div class="testi-role">IT Director, Apex Digital</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card" data-reveal>
+                    <div class="testi-stars">â˜…â˜…â˜…â˜…â˜…</div>
+                    <p class="testi-quote">"Outstanding service from start to finish. The team at KVN Tech understood our requirements immediately and delivered exactly what we needed, on time and within budget."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">SR</div>
+                        <div>
+                            <div class="testi-name">Sarah Reynolds</div>
+                            <div class="testi-role">IT Manager, BrightEdge Solutions</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card" data-reveal>
+                    <div class="testi-stars">â˜…â˜…â˜…â˜…â˜…</div>
+                    <p class="testi-quote">"We ordered 200 laptops for our new office setup. KVN Tech handled everything seamlessly â€” genuine products, competitive pricing, and a dedicated account manager throughout."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">DK</div>
+                        <div>
+                            <div class="testi-name">David Kensington</div>
+                            <div class="testi-role">CEO, Meridian Retail Group</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card" data-reveal>
+                    <div class="testi-stars">â˜…â˜…â˜…â˜…â˜…</div>
+                    <p class="testi-quote">"Fast, reliable, and always great value. KVN Tech is our first call for any IT hardware requirement. Their networking equipment has been running flawlessly for 2 years."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">RB</div>
+                        <div>
+                            <div class="testi-name">Rachel Brown</div>
+                            <div class="testi-role">Procurement Lead, Stratford Group</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-inner">
+                <div class="cta-text">
+                    <h2>Ready to Experience KVN Tech?</h2>
+                    <p>Join hundreds of UK businesses who trust us for their IT procurement needs.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-cta-dark">Get a Free Quote</a>
+                    <a href="services.html" class="btn-cta-outline">View Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="logo">
+                            <div class="logo-icon"><i class="bi bi-cpu-fill"></i></div>
+                            KVN <span>Tech</span>
+                        </a>
+                        <p>Premium IT hardware and software wholesale partner for businesses across the United Kingdom. Registered in England &amp; Wales.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-links">
+                            <li><i class="bi bi-geo-alt-fill"></i>9 Winifred Road, Dartford, DA1 3BL</li>
+                            <li><i class="bi bi-telephone-fill"></i><a href="tel:07344603968" style="color:rgba(255,255,255,0.6);">07344603968</a></li>
+                            <li><i class="bi bi-envelope-fill"></i><a href="mailto:sales@kvntech.co.uk" style="color:rgba(255,255,255,0.6);">sales@kvntech.co.uk</a></li>
+                            <li><i class="bi bi-clock-fill"></i>Monâ€“Fri: 9am â€“ 6pm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 KVN Tech Ltd. All rights reserved. Registered in England &amp; Wales.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./shared-nav.js"></script>
+</body>
+</html>

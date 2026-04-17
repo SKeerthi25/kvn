@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights | KVN Tech Ltd</title>
+    <meta name="description" content="Expert perspectives on hardware wholesale, business technology trends, and IT procurement from the KVN Tech team.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 56px;
+        }
+        .blog-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: transparent; }
+        .blog-card-img {
+            height: 210px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 3rem;
+        }
+        .blog-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+        .blog-tag {
+            display: inline-block;
+            background: rgba(232,160,32,0.1);
+            color: var(--accent);
+            border: 1px solid rgba(232,160,32,0.3);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .blog-card-body h3 { font-size: 1.05rem; margin-bottom: 10px; line-height: 1.4; }
+        .blog-card-body p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; flex: 1; }
+        .blog-read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 18px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: var(--primary);
+            transition: gap 0.3s ease;
+        }
+        .blog-read-more:hover { gap: 10px; color: var(--accent); }
+        .blog-filters {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0;
+            flex-wrap: wrap;
+        }
+        .blog-filter-btn {
+            padding: 8px 20px;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            border-radius: 100px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-body);
+        }
+        .blog-filter-btn.active, .blog-filter-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+        }
+        @media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-left">
+                <span><i class="bi bi-geo-alt-fill"></i>9 Winifred Road, Dartford, DA1 3BL</span>
+                <span><i class="bi bi-clock-fill"></i>Monâ€“Fri: 9amâ€“6pm</span>
+            </div>
+            <div class="topbar-right">
+                <a href="tel:07344603968"><i class="bi bi-telephone-fill"></i>07344603968</a>
+                <a href="mailto:sales@kvntech.co.uk"><i class="bi bi-envelope-fill"></i>sales@kvntech.co.uk</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"><i class="bi bi-cpu-fill"></i></div>
+                    KVN <span>Tech</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <button id="themeToggle" class="theme-toggle-btn" title="Switch to Dark Mode">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
+                    <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+                </div>
+                <button class="mobile-menu-btn" id="menuBtn" onclick="document.getElementById('mobileNav').classList.add('open');document.body.style.overflow='hidden'"><i class="bi bi-list"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="menuClose" onclick="document.getElementById('mobileNav').classList.remove('open');document.body.style.overflow=''"><i class="bi bi-x-lg"></i></button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="careers.html">Careers</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-accent" style="margin-top:24px;">Get a Quote</a>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="sep"><i class="bi bi-chevron-right"></i></span>
+                <span class="current">Blog &amp; Insights</span>
+            </div>
+            <h1>Insights &amp; <span style="color:var(--accent);">Trends</span></h1>
+            <p>Expert perspectives on hardware wholesale, enterprise technology, and business IT procurement.</p>
+        </div>
+    </section>
+
+    <!-- BLOG CONTENT -->
+    <section style="padding:var(--section-pad) 0;background:var(--off-white);">
+        <div class="container">
+            <!-- Filter Tabs -->
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;" data-reveal>
+                <div class="blog-filters">
+                    <button class="blog-filter-btn active">All Posts</button>
+                    <button class="blog-filter-btn">Hardware</button>
+                    <button class="blog-filter-btn">Software</button>
+                    <button class="blog-filter-btn">Business</button>
+                    <button class="blog-filter-btn">Trends</button>
+                </div>
+                <div style="position:relative;">
+                    <i class="bi bi-search" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-muted);pointer-events:none;"></i>
+                    <input type="text" placeholder="Search posts..." style="padding:10px 16px 10px 40px;border:1.5px solid var(--border);border-radius:100px;font-family:inherit;font-size:0.88rem;width:260px;outline:none;background:var(--white);color:var(--text-dark);">
+                </div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+                <div class="blog-card" data-reveal>
+                    <div class="blog-card-img"><i class="bi bi-wifi"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Trends</span>
+                        <h3>The Future of Enterprise Networking in 2026</h3>
+                        <p>Explore the upcoming trends in high-speed networking and how they will redefine business connectivity for growing organisations. As technology evolves, we anticipate a significant shift towards more integrated and efficient networking solutions that support seamless remote operations and robust data security protocols.</p>
+                    </div>
+                </div>
+                <div class="blog-card" data-reveal>
+                    <div class="blog-card-img"><i class="bi bi-laptop"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Hardware</span>
+                        <h3>Selecting the Right Laptop Stack for Your Team</h3>
+                        <p>A comprehensive guide to bulk-choosing hardware that scales with your workforce needs and budget requirements. Choosing the right tech stack is crucial for maintaining productivity and ensuring that your team has all the necessary tools to perform their tasks effectively in a dynamic business environment.</p>
+                    </div>
+                </div>
+                <div class="blog-card" data-reveal>
+                    <div class="blog-card-img"><i class="bi bi-graph-up-arrow"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Business</span>
+                        <h3>Scaling Your IT: Wholesale vs Retail Procurement</h3>
+                        <p>Why bulk procurement is the key to cost-efficiency in modern business growth and digital transformation strategies. By opting for wholesale procurement, businesses can significantly reduce their overhead costs while ensuring a consistent quality across all IT infrastructure components.</p>
+                    </div>
+                </div>
+                <div class="blog-card" data-reveal>
+                    <div class="blog-card-img"><i class="bi bi-code-square"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Software</span>
+                        <h3>Enterprise Software Licensing Simplified</h3>
+                        <p>Navigating the complexities of enterprise software and volume licensing is essential for every IT manager. Understanding the nuances of licensing agreements can help your organisation remain compliant while optimizing software expenditure across various departments.</p>
+                    </div>
+                </div>
+                <div class="blog-card" data-reveal>
+                    <div class="blog-card-img"><i class="bi bi-shield-lock"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Trends</span>
+                        <h3>Cybersecurity Hardware: What Businesses Need in 2026</h3>
+                        <p>From hardware security keys to dedicated firewalls, our guide covers the essential cybersecurity equipment for UK businesses. Investing in the right hardware is a fundamental step towards building a resilient security posture that protects your sensitive business data from evolving threats.</p>
+                    </div>
+                </div>
+                <div class="blog-card" data-reveal>
+                    <div class="blog-card-img"><i class="bi bi-hdd-network"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Hardware</span>
+                        <h3>Building a Reliable Server Infrastructure on a Budget</h3>
+                        <p>Smart server procurement strategies can deliver enterprise performance without breaking your IT budget. We provide insights into selecting hardware that offers high reliability and performance, ensuring that your core business applications remain accessible and efficient at all times.</p>
+                    </div>
+                </div>
+                <!-- Additional Blogs -->
+                <div class="blog-card" data-reveal>
+                    <div class="blog-card-img"><i class="bi bi-cloud-check"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Trends</span>
+                        <h3>Cloud Integration Strategies for Small Businesses</h3>
+                        <p>Effective cloud integration can transform the way small businesses operate by providing scalable resources and enhanced collaboration tools. Learn how to transition your legacy systems to a cloud-based environment while minimizing downtime and maximizing operational efficiency.</p>
+                    </div>
+                </div>
+                <div class="blog-card" data-reveal>
+                    <div class="blog-card-img"><i class="bi bi-display"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Hardware</span>
+                        <h3>Maximizing Productivity with Dual-Monitor Setups</h3>
+                        <p>Modern workspaces are increasingly adopting dual-monitor configurations to enhance employee multitasking capabilities. We explore the ergonomic and performance benefits of high-resolution displays and how they contribute to a more efficient and comfortable work environment.</p>
+                    </div>
+                </div>
+                <div class="blog-card" data-reveal>
+                    <div class="blog-card-img"><i class="bi bi-people"></i></div>
+                    <div class="blog-card-body">
+                        <span class="blog-tag">Business</span>
+                        <h3>The Role of Managed IT Services in Business Growth</h3>
+                        <p>Managed IT services allow businesses to focus on their core objectives while experts handle the complexities of technology management. Discover how a partnership with a reliable IT provider can drive innovation and provide a competitive edge in today's fast-paced market.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="logo">
+                            <div class="logo-icon"><i class="bi bi-cpu-fill"></i></div>
+                            KVN <span>Tech</span>
+                        </a>
+                        <p>Premium IT hardware and software wholesale partner for businesses across the United Kingdom. Registered in England &amp; Wales.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-links">
+                            <li><i class="bi bi-geo-alt-fill"></i>9 Winifred Road, Dartford, DA1 3BL</li>
+                            <li><i class="bi bi-telephone-fill"></i><a href="tel:07344603968" style="color:rgba(255,255,255,0.6);">07344603968</a></li>
+                            <li><i class="bi bi-envelope-fill"></i><a href="mailto:sales@kvntech.co.uk" style="color:rgba(255,255,255,0.6);">sales@kvntech.co.uk</a></li>
+                            <li><i class="bi bi-clock-fill"></i>Monâ€“Fri: 9am â€“ 6pm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 KVN Tech Ltd. All rights reserved. Registered in England &amp; Wales.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./shared-nav.js"></script>
+    <script>
+        // Filter tabs
+        document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
