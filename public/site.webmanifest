@@ -1,0 +1,21 @@
+{
+  "name": "KVN TECH LTD",
+  "short_name": "KVN TECH",
+  "description": "Premium IT Wholesale Hardware & Software UK",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0B2545",
+  "theme_color": "#0ABDE3",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

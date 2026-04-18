@@ -157,20 +157,54 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ======================================
-       6. CONTACT FORM SUBMIT
+       6. CONTACT FORM SUBMIT (EmailJS)
     ====================================== */
     const form = document.getElementById('quoteForm');
     if (form) {
+        // Initialize EmailJS with Public Key
+        // IMPORTANT: Replace 'YOUR_PUBLIC_KEY' with your actual Public Key from EmailJS
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init("ZzU6M6zJMpVBCUNDz");
+        }
+
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             const status = document.getElementById('formStatus');
-            if (status) {
-                status.style.display  = 'block';
-                status.style.color    = '#22C55E';
-                status.textContent    = '✔ Thank you! We will get back to you within 24 hours.';
-                form.reset();
-                setTimeout(function () { status.style.display = 'none'; }, 6000);
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            if (!status) return;
+
+            // Basic UI Feedback
+            status.style.display = 'block';
+            status.style.color = 'var(--primary)';
+            status.textContent = 'Sending message...';
+            
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
             }
+
+            // Send via EmailJS
+            // IMPORTANT: Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID'
+            emailjs.sendForm('service_jiraf19', 'template_dzvc5c9', this)
+                .then(function() {
+                    status.style.color = '#22C55E';
+                    status.textContent = '✔ Thank you! Your message has been sent successfully.';
+                    form.reset();
+                }, function(error) {
+                    console.error('EmailJS Error:', error);
+                    status.style.color = '#EF4444';
+                    status.textContent = '✘ Oops! Something went wrong. Please try again later.';
+                })
+                .finally(function() {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<i class="bi bi-send-fill" style="margin-right:8px;"></i>Send Message';
+                    }
+                    setTimeout(function () { 
+                        status.style.display = 'none'; 
+                    }, 6000);
+                });
         });
     }
 
