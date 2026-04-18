@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kvntech.co.uk/sitemap.xml
+Sitemap: https://kvntechltd.co.uk/sitemap.xml
